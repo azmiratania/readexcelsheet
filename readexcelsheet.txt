@@ -1,0 +1,18 @@
+a!localVariables(
+  local!recordSets: readExcelSheet(
+    /*The Excel document to read from*/
+    excelDocument: ri!document,
+    /*The sheet number to read from where 0 is the first sheet, 1 is the second sheet, etc*/
+    sheetNumber: 0,
+    /*The row to start reading from where 0 is the first row*/
+    startRow: 0,
+    /*Optional: The number of columns to read. Leave blank (or use 0) to auto detect the number of columns.*/
+    numberOfColumns: 0,
+    /*Optional: The Excel documents password*/
+    password: null
+  ).result.values,
+  local!count: count(
+    local!recordSets
+  ),
+  local!recordSets
+)
